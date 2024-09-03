@@ -1,0 +1,112 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+    <title>Effects of Climate Change</title>
+
+    <body>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                background-color: #889127;
+                color: #333;
+            }
+            .container {
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
+                padding: 40px 0;
+            }
+            header {
+                background: #333;
+                color: #fff;
+                padding: 10px 0;
+                text-align: center;
+            }
+            header h1 {
+                margin: 0;
+                font-size: 2.5em;
+            }
+            nav {
+                display: flex;
+                justify-content: center;
+                padding: 10px 0;
+                background: #444;
+            }
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 15px;
+                margin: 0 5px;
+            }
+            nav a:hover {
+                background: #555;
+            }
+            h2 {
+                margin-top: 20px;
+            }
+            .content {
+                background: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .content img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+            .content p {
+                font-size: 1.1em;
+                margin: 20px 0;
+            }
+            .content ul {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+            
+        </style>
+
+        <div class="container">
+            <div class="content">
+                <h2>Introduction</h2>
+                <p>Climate change has far-reaching effects on the environment, human health, and the economy. These impacts are already being felt globally, and they are expected to intensify in the coming decades.</p>
+                <img src="/static/effects.jfif" alt="Climate Change Effects" />
+                
+                <h2>Environmental Effects</h2>
+                <ul>
+                    <li><strong>Rising Sea Levels:</strong> The melting of polar ice caps and glaciers, along with the thermal expansion of seawater, contributes to rising sea levels. This can lead to coastal erosion, flooding, and the displacement of coastal communities.</li>
+                    <li><strong>Extreme Weather Events:</strong> Climate change increases the frequency and intensity of extreme weather events such as hurricanes, droughts, heatwaves, and heavy rainfall. These events can cause significant damage to infrastructure and ecosystems.</li>
+                    <li><strong>Ocean Acidification:</strong> Increased levels of carbon dioxide in the atmosphere are absorbed by oceans, leading to acidification. This affects marine life, particularly coral reefs and shellfish, disrupting marine ecosystems.</li>
+                </ul>
+                <img src="/static/effects.jfif" alt="Rising Sea Levels" />
+
+                <h2>Human Health Effects</h2>
+                <ul>
+                    <li><strong>Heat-Related Illnesses:</strong> Higher temperatures can lead to heat-related illnesses such as heatstroke and dehydration, particularly affecting vulnerable populations like the elderly and children.</li>
+                    <li><strong>Respiratory Issues:</strong> Increased air pollution and the proliferation of allergens can exacerbate respiratory conditions like asthma and other lung diseases.</li>
+                    <li><strong>Vector-Borne Diseases:</strong> Climate change can alter the distribution of vector-borne diseases such as malaria and dengue fever, increasing their spread to new areas.</li>
+                </ul>
+                <img src="/static/effects.jfif" alt="Heatwave" />
+
+                <h2>Economic Effects</h2>
+                <ul>
+                    <li><strong>Agricultural Impact:</strong> Changes in temperature and precipitation patterns can affect crop yields and livestock, leading to food insecurity and higher food prices.</li>
+                    <li><strong>Damage to Infrastructure:</strong> Extreme weather events can damage infrastructure such as roads, bridges, and buildings, leading to costly repairs and economic disruptions.</li>
+                    <li><strong>Energy Demand:</strong> Higher temperatures increase the demand for energy, particularly for cooling, which can strain energy resources and increase costs.</li>
+                </ul>
+                <img src="/static/effects.jfif" alt="Agricultural Impact" />
+
+                <h2>Conclusion</h2>
+                <p>The effects of climate change are profound and widespread, impacting the environment, human health, and the economy. Addressing these challenges requires concerted global efforts to mitigate emissions and adapt to changing conditions.</p>
+                <p>For more detailed information on climate change and its effects, visit our <a href="https://example.com/library" style="color: #007bff;">Library</a>.</p>
+            </div>
+        </div>
+
+    </body>
+
+{% endblock %}

@@ -1,0 +1,137 @@
+
+
+<!-- base.html -->
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django Site{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.2/css/hover-min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.2/css/hover-min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wow.js"></script>
+    
+    {% comment %} custom css {% endcomment %}
+    <link href = "{% static 'css/blog.css' %}" rel = "stylesheet">
+</head>
+<body class="body" style = "background-color: rgb(203, 224, 9);"> 
+    <!-- <div class="body" style="background-color: aqua;"></div> -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success py-0">
+        <div class="container-fluid">
+            <h4 class="text-light float-left">Kenya Climate Youth Corps</h4>
+
+        <div class = "btn float-right">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item  ">
+                <button class = "btn btn-sm " > 
+                    <a class="btn btn-outline-light" href= '{% url "blog:login" %}' >Login</a>
+                </button>
+                
+                </li>
+                <li class="nav-item">
+                <button class = "btn btn-sm " > 
+                    <a class="btn btn-outline-light" href= '{% url "blog:register" %}' >Register</a>
+                </button>
+                <li class="nav-item">
+                <button class = "btn btn-sm " > 
+                    <a class="btn btn-outline-light" href= '{% url "blog:logout" %}' >Logout</a>
+                </button>
+                
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    </nav>
+
+    {% if request.user.is_authenticated %}
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-3">
+                    
+                    <li class="nav-item {% block homeactive %}{% endblock homeactive %} ">
+                        <button class="btn" type="button"> 
+                            
+                            <a class=" btn btn-lg btn-outline-light mx-auto " href='{% url "blog:post_home" %}'>Home</a>
+                        </button>
+                    </li>
+                
+                    <li class="nav-item{% block articlesactive %}{% endblock articlesactive %}">
+                        <button class="btn" type="button"> 
+                            <a class="btn btn-outline-success" href='{% url "blog:article_list" %}'> Articles</a>
+                        </button>
+                    </li>
+
+                    <li class="nav-item{% block blogsactive %}{% endblock blogsactive %}">
+                        <button class="btn" type="button"> 
+                                <a class="btn btn-outline-success" href='{% url "blog:post_list" %}'>Blogs</a>
+                        </button>
+                    </li>
+                    
+                    <li class="nav-item{% block updatesactive %}{% endblock updatesactive %}">
+
+                        <button class="btn " type="button"> 
+                                <a class="btn btn-outline-success" href='{% url "blog:post_updates" %}'>Updates</a>
+                        </button>
+                        
+                    </li>
+                    <li class="nav-item{% block aboutactive %}{% endblock aboutactive %}">
+                    
+                        <button class="btn " type="button"> 
+                                    <a class="btn btn-outline-success" href= '{% url "blog:post_about" %}'>About Us</a>
+                        </button>
+                        </li>
+                    <li class="nav-item{% block contactsactive %}{% endblock contactsactive %}">
+                        <button class="btn" type="button"> 
+                                     <a class="btn btn-outline-success" href= '{% url "blog:post_contact" %}'>Contacts</a>
+                        </button>
+                    </li>
+                
+                </ul>
+                
+                <form class = "form-inline my-2 my-log-0 ml-auto" method = "Get" action = "{% url 'blog:search' %}" > 
+                    <input class = "form-control mr-sm-2" type = "search" placeholder = "search" aria-label="search" name="query" >
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">search</button>
+                </form>
+            </div>
+       
+    </nav>
+
+    {% endif %}
+    
+    <div class="container">
+
+        {% block content %}
+  
+        {% endblock %}
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <footer class = "bg-success text-light text-center py-3 wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+        <div class = "container">
+            <p> &copy; 2024 Kenya Climate Youth Corps. All Rights Reserved.</p>
+            <p> Email: <a href = "mailto:info@kenyaclimateyouthcorps.org" class = "text-light"> info@kenyaclimateyouthcorps.org </p>
+            <p> Phone: +254 000000000</p>
+    
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,82 @@
+
+.home{
+   
+    height: 500px;
+    background-color: rgb(124, 211, 9);
+    
+}
+.home h1, h1 p{
+    color: rgb(11, 233, 59);
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+.home1{
+    background-color: rgb(98, 102, 99);
+
+}
+
+.join{
+    padding-top: 250px;
+  
+}
+
+.circle{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: rgb(45, 59, 45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(51, 53, 53);
+    position: relative;
+    margin-bottom: 1.5rem;
+    color: rgb(242, 243, 245);
+    font-size: 1.2rem;
+    font-family: serif;
+    
+}
+
+
+
+
+.circle p {
+    
+    position: absolute;
+    margin-top: 3.5rem;
+    padding: 0%;
+    text-align: center;
+    color: aliceblue;
+    font-size: 1.2rem;
+
+
+}
+
+.circle i{
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1;
+}
+
+.circle1{
+    background-color: aqua;
+    width: 100%;
+}
+
+
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form.control {
+    margin-bottom: 15px;
+}
+
+

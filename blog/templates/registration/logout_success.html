@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+{% block title %}Logout{% endblock %}
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-success text-light text-center">
+                    <h1 class="mb-0">Log Out</h1>
+                </div>
+                <div class="card-body text-center">
+                    <p class="mb-4">You have successfully logged out</p>
+                    <a href="{% url 'blog:login' %}" class="btn btn-outline-primary btn-block mb-2">Login again</a>
+                    <!-- <a href="{% url 'blog:post_home' %}" class="btn btn-outline-primary btn-block mb-4">Return to homepage</a> -->
+                    <p>Or close the browser window</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+{% endblock %}

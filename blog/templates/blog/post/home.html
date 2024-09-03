@@ -1,0 +1,370 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %} Kenya Climate Youth Corps {% endblock%} 
+{% block homeactive %}active{% endblock homeactive %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenya Climate Youth Corps</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- typed css -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wow.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        var typed = new Typed('#typed', {
+        strings: ["Kenya Climate Youth Corps"],
+        typeSpeed: 100,
+        backSpeed: 25,
+        loop: false,
+        showCursor: false,
+        });
+        new WOW().init();
+      });
+    </script>
+    <style>
+      .wow{
+        visibility: hidden;
+      }
+    
+      .jumbotron {
+        background-position: 0%;
+        background-color: #62db2a;
+        background-image: url('/static/your-background-image.jpg'); /*add your own background image*/
+        background-size: cover;
+        color: rgb(255, 255, 255);
+      }
+      /* .container-fluid.bg-success {
+        background-color: #1042e7 !important;
+      } */
+      .card {
+        background-color: #cad4cce1;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      .circle {
+        background-color: #7fac04;
+        border-radius: 50%;
+        border-color: #e0f7fa;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 20px;
+        text-align: center;
+      }
+      .circle i {
+        font-size: 2em;
+        color: #c8f502;
+      }
+      .circle p{
+        color: #ebebeb;
+      }
+
+    
+    </style>
+    <!-- animation css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.2/css/hover-min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  </head>
+  <body>
+    
+
+    <!-- this is a jumbotron -->
+     
+    <div class="container-fluid px-0 py-0">
+      <div class="container-fluid">
+        <div class="jumbotron">
+          <h1 class="display-4 wow animate__animated animate__bounceInDown" data-wow-delay="1s">
+            <span id="typed"></span> 
+          </h1>
+          <p class="lead wow animate__animated animate__bounceInRight" data-wow-delay="1.5s">We are the future of climate action innovations. </p>
+          <br><br>
+          <br><br>
+          <br><br>
+          <!-- should lead to a projects page where all our work will be stored -->
+          <p class="wow animate__animated animate__fadeInLeft" data-wow-delay="1.5s">Inside the innovation hub where youth ideas are shaped into Solutions. Grow with us today!</p>
+          <a class="btn btn-primary btn-lg wow animate__animated animate__zoomIn" data-wow-delay="1.7s" href="#" role="button">Learn More <i class="fas fa-arrow-right"></i></a> 
+          <a class="btn btn-outline-light btn-lg wow float-right animate__animated animate__zoomIn" data-wow-delay="1.7s" href='{% url "blog:join" %}' role="button">Join Us Today <i class="fas fa-arrow-right"></i></a> 
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-1 wow animate__animated animate__fadeInLeft" data-wow-delay="2s">
+          <img src="/static/innovation.jfif" class="rounded w-100 " alt="">
+          <p> 
+            <i class="fas fa-globe"></i> <!-- Font Awesome icon -->
+            We envision a world where the next generation is fully equipped and motivated to address climate challenges. Through collaborative efforts, we aim to foster innovative solutions that mitigate the impacts of climate change and promote environmental justice.
+          </p>
+          <a class="btn btn-outline-secondary btn-mini" href='{% url "blog:post_about" %}' role="button">About Us <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="col-md-3 mb-1 wow animate__animated animate__fadeInLeft" data-wow-delay="2s">
+          <img src="/static/library.jfif" class="rounded w-100 " alt="">
+          <p> 
+            Explore our library for a wealth of knowledge and insights. Discover articles, research, and stories that inspire and inform. Dive in now!
+          </p>
+          <a class="btn btn-outline-secondary btn-mini" href="{% url 'blog:library' %}" role="button">Our Library <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="col-md-3 mb-1 wow animate__animated animate__fadeInRight" data-wow-delay="2s">
+          <img src="/static/courses.jfif" class="rounded w-100 " alt="">
+          <p> 
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, quasi dolore perferendis quis odit illum pariatur? Quos, corrupti laborum! Consequatur?
+          </p>
+          <a class="btn btn-outline-secondary btn-mini" href='{% url "blog:courses" %}' role="button">Free Courses <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="col-md-3 mb-1 wow animate__animated animate__fadeInRight" data-wow-delay="2s">
+          <img src="/static/services.jfif" class="rounded w-100 " alt="">
+          <p> 
+            Explore our diverse range of services designed to meet your needs, from tailored research and insightful articles to interactive workshops and expert consultations. Let us help you achieve your goals with our comprehensive support and innovative solutions.
+          </p>
+          <a class="btn btn-outline-secondary btn-mini" href='{% url "blog:services" %}' role="button">Our Services <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+        <div class="col-md-4 d-flex justify-content-center">
+
+          <!-- section for showing the most recent blog on the homepage -->
+          <div class="card" style="width: 45rem;">
+            {% if latest_post.image %}
+            <img src="{{ latest_post.image.url }}" class="card-img-top" alt="{{ latest_post.title }}">
+            {% else %}
+            <img src="/static/climate article.jfif" class="card-img-top" alt="Default Image">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ latest_post.title }}</h5>
+                <p class="card-text">{{ latest_post.excerpt }}</p>
+                <a href="{{ latest_post.get_absolute_url }}" class="btn btn-outline-primary">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        
+        
+        
+        </div>
+        <div class="col-md-4 d-flex justify-content-center wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+          <div class="card" style="width: 45rem;">
+            <img src="/static/climate article.jfif" class="card-img-top " alt="...">
+            <div class="card-body">
+              <h5 class="card-title">My Blogs</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href='{% url "blog:post_list" %}' class="btn btn-outline-primary">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+          <div class="card" style="width: 45rem;">
+            <img src="/static/team earth.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">My Articles</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href='{% url "blog:article_list" %}' class="btn btn-outline-primary">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-4 d-flex justify-content-center wow animate__animated animate__fadeInLeft" data-wow-delay="1s">
+          <div class="card" style="width: 45rem;">
+            <img src="/static/fossil fuels.jpeg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">My Articles</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href='{% url "blog:article_list" %}' class="btn btn-outline-primary">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-md-4 d-flex justify-content-center wow animate__animated animate__fadeInLeft" data-wow-delay="1s">
+          <div class="card" style="width: 45rem;">
+            <img src="/static/science.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">My Articles</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href='{% url "blog:article_list" %}' class="btn btn-outline-primary">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-md-4 d-flex justify-content-center wow animate__animated animate__fadeInLeft" data-wow-delay="1s">
+          <div class="card" style="width: 30rem;">
+            <img src="/static/team.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">My Articles</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href='{% url "blog:article_list" %}' class="btn btn-outline-primary">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    
+
+    <div class="container wow animate__animated animate__fadeIn" data-wow-delay="1s">
+      <h3 class="text-center wow animate__animated animate__fadeIn"> Our Values</h3>
+      <div class="row">
+        <div class="col-6 col-md-2 justify-content-center wow animate__animated animate__fadeInLeft" data-wow-delay="0.5s">
+          <div class="circle">
+            <i class="fas fa-leaf"></i>
+            <p>Sustainability</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 justify-content-center wow animate__animated animate__fadeInDown" data-wow-delay="1s">
+          <div class="circle">
+            <i class="fas fa-book"></i>
+            <p>Education</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 justify-content-center wow animate__animated animate__fadeInUp" data-wow-delay="1.5s">
+          <div class="circle">
+            <i class="fas fa-hands-helping"></i>
+            <p>Empowerment</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 justify-content-center wow animate__animated animate__fadeInUp" data-wow-delay="2s">
+          <div class="circle">
+            <i class="fas fa-handshake"></i>
+            <p>Collaboration</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 justify-content-center wow animate__animated animate__fadeInDown" data-wow-delay="2.5s">
+          <div class="circle">
+            <i class="fas fa-search"></i>
+            <p>Discovery</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 justify-content-center wow animate__animated animate__fadeInRight" data-wow-delay="3s">
+          <div class="circle">
+            <i class="fas fa-lightbulb"></i>
+            <p>Innovation</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" style="background: linear-gradient(to right, #848b8b, #64bb8b); padding: 40px 0;">
+      <h3 class="text-center"> Our Problem-solving Cycle </h3>
+      <div class="row">
+        <div class="col-md-3 wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">
+          <h5 class="text-center"> Causes</h5> 
+          <img src="/static/causes.jfif" class="rounded w-100" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, quasi dolore perferendis quis odit illum pariatur? Quos, corrupti laborum! Consequatur?</p>
+          <a href='{% url "blog:causes" %}' class="btn btn-outline-dark mb-2 justify-content-center">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="col-md-3 wow animate__animated animate__fadeInUp" data-wow-delay="1s">
+          <h5 class="text-center"> Effects</h5> 
+          <img src="/static/effects.jfif" class="rounded w-100" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, quasi dolore perferendis quis odit illum pariatur? Quos, corrupti laborum! Consequatur?</p>
+          <a href='{% url "blog:effects" %}' class="btn btn-outline-dark mb-2 justify-content-center">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="col-md-3 wow animate__animated animate__fadeInUp" data-wow-delay="1.5s">
+          <h5 class="text-center"> Solutions</h5>
+          <img src="/static/solutions.png" class="rounded w-100" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, quasi dolore perferendis quis odit illum pariatur? Quos, corrupti laborum! Consequatur?</p>
+          <a href='{% url "blog:solutions" %}' class="btn btn-outline-dark mb-2 justify-content-center">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="col-md-3 wow animate__animated animate__fadeInUp" data-wow-delay="2s">
+          <h5 class="text-center"> Stakeholders</h5>
+          <img src="/static/stakeholders.jfif" class="rounded w-100" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, quasi dolore perferendis quis odit illum pariatur? Quos, corrupti laborum! Consequatur?</p>
+          <a href='{% url "blog:post_updates" %}' class="btn btn-outline-dark mb-2 justify-content-center">Learn More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+  
+
+    <div class="container mt-3 mb-3" >
+      <div class="columns-section">
+        <div class="row no-gutters">
+          <div class="col-12 col-md-6 wow animate__animated animate__fadeInLeft column-box" data-wow-delay="1s">
+            <h2 class="text-center">Discover Our Unique Approach</h2>
+            <h6>Innovative Solutions Tailored for You</h6>
+            <h6>We combine technology and creativity to provide the best services.</h6>
+            <p>Our team of experts works closely with you to understand your needs and deliver customized solutions that drive results.</p>
+            <ul>
+              <li>Expert Consultation</li>
+              <li>Cutting-edge Technology</li>
+              <li>Creative Strategies</li>
+            </ul>
+            <a href="{% url 'blog:library' %}" class="btn btn-outline-primary">Explore Our Library <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="col-12 col-md-6 wow animate__animated animate__fadeInRight column-box" data-wow-delay="1s">
+            <h1 class="text-center">Join Our Community</h1>
+            <h6>Stay Updated with Latest Trends</h6>
+            <h6>Explore, Learn, and Grow with Us</h6>
+            <p>From the latest research to insightful articles, our library is your gateway to knowledge. Join our community and be a part of the conversation.</p>
+            <ul>
+              <li>Latest Research</li>
+              <li>Expert Opinions</li>
+              <li>Interactive Workshops</li>
+            </ul>
+            <a href="{% url 'blog:library' %}" class="btn btn-outline-secondary">Visit Our Library <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <style>
+    .column-box {
+      /* padding: 2px; */
+      /* margin: 1px; */
+    
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      background-color: #fff;
+    }
+    
+    .column-box:nth-child(1) {
+      background-color: #f0f4c3; /* Light green background */
+    }
+    
+    .column-box:nth-child(2) {
+      background-color: #c5e1a5; /* Slightly darker green background */
+    }
+    </style>
+    
+
+    <div class="three-columns-section" style="background: #e0f7fa; padding: 40px 0;">
+  <div class="container">
+  <div class="row no-gutters">
+  <div class="col-12 col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="1s" style="border: 1px solid #ccc; box-shadow: 1x 1px rgba(0, 0, 0, 0.1); padding: 20px; background-color: #fff;">
+    <h3>Featured Article</h3>
+    <p>Discover the latest insights on sustainable living. Learn how you can make a difference in the world
+      <i class="fas fa-arrow-right"></i>
+    </p>
+  </div>
+  <div class="col-12 col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="1.5s" style="border: 1px solid #ccc; box-shadow: 1px 1px rgba(0, 0, 0, 0.1); padding: 20px; background-color: #fff;">
+    <h3>Our Projects</h3>
+    <p>Explore our innovative projects aimed at tackling climate change. Join us and be a part of the solution
+      <i class="fas fa-arrow-right"></i>
+    </p>
+  </div>
+  <div class="col-12 col-md-4 wow animate__animated animate__fadeInUp" data-wow-delay="2s" style="border: 1px solid #ccc; box-shadow: 1px 1px rgba(0, 0, 0, 0.1); padding: 20px; background-color: #fff;">
+    <h3>Get Involved</h3>
+    <p>Want to make an impact? Learn how you can get involved with our initiatives and contribute to a greener future
+      <i class="fas fa-arrow-right"></i>
+    </p>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
+
+{% endblock content %}

@@ -1,0 +1,63 @@
+
+
+{%  extends "blog/base.html" %}
+
+{% block title %} Articles {% endblock%} 
+{% block articlesactive %}active{% endblock articlesactive %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class = "col-md-8">
+
+            <h1> Articles </h1>
+
+            {% for article in articles %}
+
+                <h5>
+                    <a href = "{% url 'blog:article_detail' article.slug %}">         
+                    {{ article.title }}
+                    </a>
+                </h5>
+
+                <p class ="date">
+                    Published {{article.publish}} 
+                </p>
+
+                {{article.body|truncatewords:30|linebreaks}}
+
+            {% endfor%}
+        </div>
+
+        <div class = "col-md-4 " style=background-color:yellow;>
+            <h5 class="text-center">More Articles<h5>
+            <br>
+            <ul class="list-group">
+                {% for article in articles %}
+                    <li class="list-group-item">
+                        <h6><a href="{% url 'blog:article_detail' article.slug %}">{{ article.title}}</a></h6>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        </div> 
+    </div>
+</div>
+
+
+
+<!-- pagination code
+<div class="container">
+    <div class="pagination pagination-centered row span">
+    
+        <li class="disabled"><a href="#">«</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">»</a></li>
+    </div>
+</div> -->
+ 
+{%  endblock %}

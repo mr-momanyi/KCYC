@@ -1,0 +1,74 @@
+{% extends 'blog/base.html' %}
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-success text-light text-center">
+                    <h1 class="mb-0">Log In</h1>
+                </div>
+                <div class="card-body">
+                    {% if form.errors %}
+                    <p class="text-danger text-center">Your username and password did not match. Please try again.</p>
+                    {% else %}
+                    <p class="text-center">Please, use the following form to log in. Don't have an account? Please <a href="{% url 'blog:register' %}">register here</a>.</p>
+                    {% endif %}
+
+                    <div class="login-form">
+                        <form action="{% url 'blog:login' %}" method="post" class="text-left" id="loginForm">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="hidden" name="next" value="{{ next }}"/>
+                            <div class="text-center">
+                                <input type="submit" value="Login" class="btn btn-success btn-block">
+                            </div>
+                        </form>
+                        <p class="text-center mt-3">
+                            <a href="{% url 'blog:password_reset' %}">Forgotten your password?</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>
+<style>
+    .errorlist {
+        display: none;
+        color: red;
+    }
+</style>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        var form = event.target;
+        var valid = true;
+        var elements = form.elements;
+
+        // Hide all error messages
+        var errorLists = form.querySelectorAll('.errorlist');
+        errorLists.forEach(function(errorList) {
+            errorList.style.display = 'none';
+        });
+
+        // Validate required fields
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            if (element.hasAttribute('required') && !element.value) {
+                valid = false;
+                var errorList = element.parentNode.querySelector('.errorlist');
+                if (errorList) {
+                    errorList.style.display = 'block';
+                }
+            }
+        }
+
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
+</script>
+{% endblock %}
