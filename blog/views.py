@@ -34,7 +34,7 @@ from django.core.mail import send_mail
 
 @login_required
 def home(request):
-    latest_post = Post.published.order_by('-publish').first()
+    latest_post = Post.objects.order_by('-published_at').first()
     return render(request, 'blog/post/home.html', {'latest_post': latest_post})
 @login_required
 def join_us(request):

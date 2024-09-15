@@ -1,0 +1,85 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+    <title>Solutions to Climate Change</title>
+
+    <body>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                /* background-color: #f0f4c3; */
+                color: #333;
+            }
+            .container {
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
+                padding: 40px 0;
+            }
+           
+            .content {
+                /* background: #fff; */
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .content img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+            .content p {
+                font-size: 1.1em;
+                margin: 20px 0;
+            }
+            .content ul {
+                list-style-type: disc;
+                margin-left: 20px;
+            }
+            
+        </style>
+
+        <div class="container">
+            <div class="content">
+                <h2>Introduction</h2>
+                <p>Addressing climate change requires a multifaceted approach involving efforts from individuals, communities, governments, and businesses. Solutions range from reducing greenhouse gas emissions to adapting to changes and building resilience.</p>
+                <img src="/static/solutions.png" alt="Climate Change Solutions" />
+
+                <h2>Mitigation Strategies</h2>
+                <ul>
+                    <li><strong>Renewable Energy:</strong> Transitioning to renewable energy sources such as solar, wind, and hydroelectric power reduces dependence on fossil fuels and lowers greenhouse gas emissions.</li>
+                    <li><strong>Energy Efficiency:</strong> Improving energy efficiency in buildings, transportation, and industries helps reduce energy consumption and emissions.</li>
+                    <li><strong>Carbon Sequestration:</strong> Planting trees, restoring forests, and using carbon capture technology can remove carbon dioxide from the atmosphere and store it safely.</li>
+                </ul>
+                <img src="/static/solutions.png" alt="Renewable Energy" />
+
+                <h2>Adaptation Measures</h2>
+                <ul>
+                    <li><strong>Building Resilience:</strong> Developing infrastructure that can withstand extreme weather events helps communities adapt to climate change impacts.</li>
+                    <li><strong>Water Management:</strong> Implementing efficient water management practices and technologies ensures a sustainable supply of water in changing climate conditions.</li>
+                    <li><strong>Disaster Preparedness:</strong> Preparing for and responding to natural disasters through early warning systems and emergency plans can reduce the impact of extreme events.</li>
+                </ul>
+                <img src="/static/solutions.png" alt="Adaptation Measures" />
+
+                <h2>Policy and International Cooperation</h2>
+                <ul>
+                    <li><strong>Climate Policies:</strong> Governments can implement policies and regulations to limit emissions, promote sustainability, and incentivize green technologies.</li>
+                    <li><strong>International Agreements:</strong> Global cooperation through agreements like the Paris Agreement aims to unite countries in the fight against climate change and set targets for reducing emissions.</li>
+                    <li><strong>Public Awareness:</strong> Educating the public about climate change and encouraging sustainable practices helps drive collective action and support for climate solutions.</li>
+                </ul>
+                <img src="/static/solutions.png" alt="Climate Policy" />
+
+                <h2>Conclusion</h2>
+                <p>Effective solutions to climate change require a combination of mitigation, adaptation, and policy efforts. By taking action at all levels, we can work towards a sustainable future and address the challenges posed by climate change.</p>
+                <p>For more detailed information on climate change solutions, visit our <a href="https://example.com/library" style="color: #007bff;">Library</a>.</p>
+            </div>
+        </div>
+
+    </body>
+
+{% endblock %}

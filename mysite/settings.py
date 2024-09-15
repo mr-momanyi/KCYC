@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+import dj_database_url
+
+
+
 # not yet installed decouple 
 # from decouple import config
 
@@ -27,9 +32,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-pqf7w3w%2+r5-tgs6-j1nc$v%2&#^6h-^=$dp+w)j%+10x24r&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = [ 'your-heroku-app-name.herokuapp.com', 'localhost', '127.0.0.1'] 
+# ALLOWED_HOSTS = ['mrmomanyi.pythonanywhere.com'] 
+ALLOWED_HOSTS = ['*'] 
 
 
 SITE_ID = 1
@@ -100,6 +107,14 @@ import os
 # }
 
 
+
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+}
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -162,11 +177,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Extra settings for static files on Heroku
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blog'),
 
 ]
+django_heroku.settings(locals())
 
 
 
@@ -189,12 +207,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'jmomanyi003@gmail.com'
-EMAIL_HOST_PASSWORD = 'j1u2s3t4i5n6e7'
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'kenyaclimateyouthcorps@gmail.com'
+EMAIL_HOST_PASSWORD = 'k1c2y3c4@gmail'
+DEFAULT_FROM_EMAIL = 'kenyaclimateyouthcorps@gmail.com'
 
 
-import django_heroku
-django_heroku.settings(locals())
+# import django_heroku
+# django_heroku.settings(locals())
 
 
 
@@ -209,3 +229,4 @@ django_heroku.settings(locals())
 
 # redirections
 
+'django.contrib.auth.backends.ModelBackend',

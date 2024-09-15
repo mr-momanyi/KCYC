@@ -1,0 +1,34 @@
+
+
+{% extends "blog/base.html" %}
+
+{% block title %} Updates {% endblock %}
+{% block updatesactive %}active{% endblock %}
+{% block content %}
+
+<div class="container mt-5 mb-5">
+    <h1 class="align-items-center justify-content-center text-center">Our Updates</h1>
+    <br>
+    <hr>
+   
+    {% for update in updates %}
+        <div class="update mb-4">
+            <h2>{{ update.title }}</h2>
+            {% if update.image %}
+                <img src="{{ update.image.url }}" alt="{{ update.title }}" class="img-fluid mx-auto d-block">
+            {% elif update.image_url %}
+                <img src="{{ update.image_url }}" alt="{{ update.title }}" class="img-fluid mx-auto d-block">
+            {% else %}
+                <p>No image available.</p>
+            {% endif %}
+            <p>{{ update.body }}</p>
+            <small>Published on: {{ update.published }}</small>
+            <br>
+        </div>
+    {% empty %}
+        <p>No updates available.</p>
+    {% endfor %}
+</div>
+    
+{% endblock %}
+

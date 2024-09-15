@@ -1,0 +1,76 @@
+
+
+{%  extends "blog/base.html" %}
+
+{% block title %}Blogs {% endblock%} 
+{% block blogsactive %}active{% endblock blogsactive %}
+{% block content %}
+<div class = "container mt-5">
+    <div class = "row">
+        <div class = "col-md-8">
+
+            <h5> Climate elements and their related effects on our planet. </h5>
+            <br>
+
+            {% for post in posts %}
+                                                                                     
+                <h5>
+                    <a href = "{% url 'blog:post_detail' post.slug %}">         
+                    {{ post.title }}
+                    </a>
+                </h5>
+<!-- taggit line -->
+                <!-- <p class="tags">Tags: {{ post.tags.all|join:", " }}</p> -->
+
+
+                <p class ="date">
+                    Published {{post.publish}} 
+                </p>
+
+                {{post.body|truncatewords:30|linebreaks}}
+
+            {% endfor%}
+        </div> 
+        <div class = "col-md-4" style=background-color:yellow;>
+
+            <h5 class="text-center">More Blogs<h5>
+            <br>
+            <ul class = "list-group">
+                {% for post in posts %}
+
+                <li class = "list-group-item">
+                    <h6>
+                    <a href = "{% url 'blog:post_detail' post.slug %}">{{post.title}}</a>
+                </h6>
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>   
+                <br><br>
+    </div>
+</div>
+
+
+<!-- pagination code -->
+<!-- <div class="container">
+    <div class="pagination pagination-centered row span">
+    
+        <li class="disabled"><a href="#">«</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">»</a></li>
+    </div>
+</div> -->
+
+<!-- {% include "pagination.html" with page=posts %} -->
+
+
+{%  endblock %}
+
+               

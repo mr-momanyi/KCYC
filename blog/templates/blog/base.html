@@ -124,14 +124,54 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <footer class = "bg-success text-light text-center py-3 wow animate__animated animate__fadeInUp" data-wow-delay="1s">
-        <div class = "container">
-            <p> &copy; 2024 Kenya Climate Youth Corps. All Rights Reserved.</p>
-            <p> Email: <a href = "mailto:info@kenyaclimateyouthcorps.org" class = "text-light"> info@kenyaclimateyouthcorps.org </p>
-            <p> Phone: +254 000000000</p>
+    <footer class="bg-success text-light wow animate__animated animate__fadeInUp" data-wow-delay="1s" style="padding: 20px;">
+        <div class="container d-flex flex-wrap justify-content-center align-items-start" style="text-align: center;">
+            <!-- Logo and About Section -->
+            <div class="col-md-4 mb-3" style="display: flex; flex-direction: column; align-items: center;">
+                <a href="{% url 'blog:post_home' %}">
+                    <img src="{% static 'kcyc logo.png' %}" alt="Logo" style="width: 150px; height: auto;">
+                </a>
+                <p style="margin: 10px 0;">
+                    <a href="{% url 'blog:post_about' %}" class="text-light" style="text-decoration: none;">About Us</a> | 
+                    <a href="{% url 'blog:post_contact' %}" class="text-light" style="text-decoration: none;">Contact Us</a>
+                </p>
+            </div>
     
+            <!-- Contact Info -->
+            <div class="col-md-4 mb-3" style="display: flex; flex-direction: column; align-items: center;">
+                <p style="margin: 10px 0;">
+                    Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kenyaclimateyouthcorps@gmail.com" class="text-light" style="text-decoration: none;">kenyaclimateyouthcorps@gmail.com</a>
+                </p>
+                <p style="margin: 10px 0;">Phone: +254 000000000</p>
+                <p style="margin: 10px 0;">&copy; 2024 Kenya Climate Youth Corps. All Rights Reserved.</p>
+            </div>
+    
+            <!-- Social Media Icons -->
+            <div class="col-md-4 mb-3" style="display: flex; flex-direction: column; align-items: center;">
+                <p style="margin: 10px 0;">Connect with us:</p>
+                <div class="d-flex justify-content-center" style="gap: 15px;">
+                    <a href="https://www.facebook.com" target="_blank" class="text-light" style="text-decoration: none;">
+                        <i class="fab fa-facebook-f fa-1x"></i>
+                    </a>
+                    <a href="https://www.x.com" target="_blank" class="text-light" style="text-decoration: none;">
+                        <i class="fab fa-x fa-1x"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="text-light" style="text-decoration: none;">
+                        <i class="fab fa-instagram fa-1x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" class="text-light" style="text-decoration: none;">
+                        <i class="fab fa-linkedin-in fa-1x"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
+    
+
+
+
+
+
     
 </body>
 </html>
