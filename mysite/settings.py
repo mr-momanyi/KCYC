@@ -115,16 +115,16 @@ DATABASES = {
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'kcyc',
-        'USER': 'postgres',
-        'PASSWORD': 'k1c2y3c4',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'kcyc',
+#         'USER': 'postgres',
+#         'PASSWORD': 'k1c2y3c4',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
 
 
