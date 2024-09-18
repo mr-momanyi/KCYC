@@ -127,10 +127,6 @@ DATABASES = {
 # }
 
 
-# export DATABASE_URL=postgres://postgres:k1c2y3c4@localhost:5432/kcyc
-
-
-
 
 
 
