@@ -127,7 +127,9 @@ DATABASES = {
 # }
 
 DATABASES = {
-    'default': {
+    'default': 
+
+    {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.getenv('DATABASE_NAME', 'kcyc'),
         'USER': os.getenv('DATABASE_USER', 'postgres'),
@@ -139,7 +141,7 @@ DATABASES = {
 
 # Use dj_database_url to parse the DATABASE_URL from Heroku
 if os.getenv('DATABASE_URL'):
-    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+    DATABASES['default'] = dj_database_url.parse("postgresql://kcyc_postgresql_user:P2oT762NWYaBpZhL1lS6bvHqHpw4x02U@dpg-crlcgg8gph6c73e3gilg-a.oregon-postgres.render.com/kcyc_postgresql")
 
 
 #password hashers
@@ -197,7 +199,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'blog'),
 
 ]
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 
 
