@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+# import django_heroku
 import dj_database_url
 
 
@@ -125,6 +125,14 @@ DATABASES = {
 #         'PORT': '5432',
 #     }
 # }
+
+
+# export DATABASE_URL=postgres://postgres:k1c2y3c4@localhost:5432/kcyc
+
+
+
+
+
 
 DATABASES = {
     'default': 
