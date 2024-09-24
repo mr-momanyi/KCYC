@@ -14,6 +14,8 @@ from django.db.models import Q
 
 from .models import Post, Article, Updates
 from django.contrib.postgres.search import SearchVector
+from django.core.mail import send_mail, EmailMessage
+from django.conf import settings
 
 
 # paginator
@@ -187,8 +189,40 @@ def edit(request):
     # Render the edit page with the forms
     return render(request, 'blog/edit.html', {'user_form': user_form, 'profile_form': profile_form})
 @login_required
+
 def post_contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')  # User's email from form
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        if name and email and subject and message:
+            try:
+                # Email content
+                email_subject = f"New contact form submission: {subject}"
+                email_message = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+
+                # Create email message with reply-to header
+                email_msg = EmailMessage(
+                    email_subject,
+                    email_message,
+                    'justtinmomanyi@gmail.com',  # A fixed "From" email address
+                    ['kenyaclimateyouthcorps@gmail.com'],  # The recipient
+                    headers={'Reply-To': email}  # Use the form submitter's email here
+                )
+
+                # Send email
+                email_msg.send(fail_silently=False)
+
+                return HttpResponse('Thank you for your message!')
+            except Exception as e:
+                return HttpResponse(f"Error sending email: {e}")
+        else:
+            return HttpResponse("Please fill in all fields.")
+
     return render(request, 'blog/post/contact.html')
+
 
 @login_required
 # email post form view - sharing post via email
